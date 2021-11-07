@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/meteorsFragment">
+
+    <fragment
+        android:id="@+id/meteorsFragment"
+        android:name="com.example.android.meteortracker.fragments.MeteorsFragment"
+        android:label="fragment_meteors"
+        tools:layout="@layout/fragment_meteors" >
+        <action
+            android:id="@+id/action_meteorsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_meteorsFragment_to_egyMeteorsFragment"
+            app:destination="@id/egyMeteorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.android.meteortracker.fragments.DetailFragment"
+        android:label="DetailFragment" >
+        <argument android:name="selectedMeteor"
+            app:argType="com.example.android.meteortracker.bussinessdata.Meteor" />
+    </fragment>
+    <fragment
+        android:id="@+id/egyMeteorsFragment"
+        android:name="com.example.android.meteortracker.fragments.EgyMeteorsFragment"
+        android:label="EgyMeteorsFragment" >
+        <action
+            android:id="@+id/action_egyMeteorsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
